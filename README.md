@@ -14,8 +14,9 @@ All of these sensors detect surrounding objects and scenery. Autonomous cars als
  - Probability Distributions are a mathematical way to represent the uncertainty across all possible outcomes(the system).
    - It can be visualized using a graph especially in 2-dimensional cases.
    - It makes it much easier to understand and summarize the probability of a system whether that system be a coin flip experiment or the location of a self-driving car.
-   
 
+> AI for robotics
+ - Robot Localization
 
 
 
