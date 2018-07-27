@@ -51,6 +51,18 @@ A C++ functions consists of a function **declaration** and a function **definiti
 This function takes in a velocity and time. These are multiplied together to calculate a distance. 
 <img src="https://user-images.githubusercontent.com/31917400/43341711-3c3b3248-91d8-11e8-8649-10fde9952f70.jpg" />
 
+> In C++, functions can only have one output. 
+> We can make up a type. What if we need **lists of floats** within a list? In C++, they are vectors of floats within a vector and called `vector < vector <float> >`. Let's call it 't_grid'.   
+```
+typedef vector < vector <float> > t_grid;
+```
+> Sometimes we could have two different functions which each had the same name and this didn't cause any problems. This is because in C++, the function name is not the signature. The return value, type, inputs, etc constitute the signature.    
+<img src="https://user-images.githubusercontent.com/31917400/43343226-6d99ac0c-91dd-11e8-86b6-0b495864b533.jpg" />
+
+The signature for the normalize function is:
+```
+vector< vector<float> > normalize(vector< vector <float> > grid);
+```
 
 
 
