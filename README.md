@@ -94,8 +94,8 @@ The output of the code would be
 Not Moving - Neutral
 Your car is currently in gear: N
 ```
-> Switch Limitations: 
-If-else statements are much more flexible than switch statements. In fact, the case clauses in switch statements can only make comparisons between integer values. Switch cases can also compare characters like in the example code because C++ is actually converting the characters to integers. On the other hand, if statements can make comparisons between floating point numbers as well as between integers. 
+> **Switch Limitations**: 
+If-else statements are much more flexible than switch statements. In fact, the **case clauses** in switch statements can only make **comparisons** between **integer** values, between **characters** because C++ is actually converting the characters to integers. On the other hand, **if statements** can make comparisons between floating point numbers as well as between integers. 
 
 
 
