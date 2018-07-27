@@ -49,7 +49,7 @@ A C++ functions consists of a function **declaration** and a function **definiti
 <img src="https://user-images.githubusercontent.com/31917400/43340999-14442940-91d6-11e8-9f01-df132adc293c.jpg" />
 
 This function takes in a velocity and time. These are multiplied together to calculate a distance. 
-<img src="https://user-images.githubusercontent.com/31917400/43330645-bc088dd0-91bb-11e8-9a5a-bc71d111f1c5.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/43341711-3c3b3248-91d8-11e8-8649-10fde9952f70.jpg" />
 
 
 
