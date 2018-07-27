@@ -45,6 +45,8 @@ int main() {
     return 0;
 }
 ```
+Function ??
+<img src="https://user-images.githubusercontent.com/31917400/43329834-732515ae-91b9-11e8-853c-bd228c87af86.jpg" />
 
 
 
