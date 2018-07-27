@@ -65,6 +65,9 @@ vector< vector<float> > normalize(vector< vector <float> > grid);
 ```
 
 ## Control Statements
+if statements and the associated boolean logic.
+<img src="https://user-images.githubusercontent.com/31917400/43347064-ba2ee13c-91eb-11e8-8b29-2408e6e3a446.jpg" />
+
 
 
 
