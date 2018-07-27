@@ -45,13 +45,12 @@ int main() {
     return 0;
 }
 ```
-A C++ functions consists of a function **declaration** and a function **definition**. Because C++ is statically typed, you need to specify the data types for the function input variables and the data type of whatever the function returns. 
+> C++ function consists of a function **declaration** and a function **definition**. Because C++ is statically typed, you need to specify the data types for the function input variables and the data type of whatever the function returns. 
 <img src="https://user-images.githubusercontent.com/31917400/43340999-14442940-91d6-11e8-9f01-df132adc293c.jpg" />
 
-This function takes in a velocity and time. These are multiplied together to calculate a distance. 
+> This function takes in a velocity and time. These are multiplied together to calculate a distance. In C++, functions can only have one output. 
 <img src="https://user-images.githubusercontent.com/31917400/43341711-3c3b3248-91d8-11e8-8649-10fde9952f70.jpg" />
 
-> In C++, functions can only have one output. 
 > We can make up a type. What if we need **lists of floats** within a list? In C++, they are vectors of floats within a vector and called `vector < vector <float> >`. Let's call it 't_grid'.   
 ```
 typedef vector < vector <float> > t_grid;
@@ -60,11 +59,12 @@ typedef vector < vector <float> > t_grid;
 <img src="https://user-images.githubusercontent.com/31917400/43343226-6d99ac0c-91dd-11e8-86b6-0b495864b533.jpg" />
 <img src="https://user-images.githubusercontent.com/31917400/43343414-f9bc5806-91dd-11e8-937e-a30494e9cb39.jpg" />
 
-The signature for the normalize function is:
+> The signature for the normalize function is:
 ```
 vector< vector<float> > normalize(vector< vector <float> > grid);
 ```
 
+## Control Statements
 
 
 
