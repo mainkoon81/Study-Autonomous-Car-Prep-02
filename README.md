@@ -78,11 +78,12 @@ For python the iterator was defined here, and generates a list of numbers `[0, 1
 ```
 for i in range(0, elapsed_time):
 ```
-For C++, the iteration happens in this..First you declare the variable `i` and assigned a value (in this case zero). 
+For C++, the generation happens in this..First you declare the variable `i` and assigned a value (in this case zero). 
 ```
 for (int i = 0; i < elapsed_time; i++) {
 ```
 The for loop then checks if `i < elapsed_time`. If **true**, then the code block is run and then `i` **increases by one**. The code `i++` is equivalent to saying **i=i+1**. When `i=14` that will be the last time that the code block runs. The code checks that 14 is less than 15, runs the code block and increases `i` to 15. Then the code checks if 15 is less than 15. Since that is **false**, the for loop does not run again.
+
 
 
 
