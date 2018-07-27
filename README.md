@@ -4,10 +4,10 @@ Self Driving Car Preparation
 --------------------------------------------------------------------------------
 ### Intro to C++
 
-Let's see "9 + 5"
+Let's see "5 + 9", "12.07 + 65.102". Note `std::endl` or `'\n'` let the result show up all the time. 
 ```
 // include all libraries needed
-#include <iostream>
+// The definition of 'std' is in the 'iostream file' of the standard library, which needs to be included at the top of the program with the line "#include <iostream>". Otherwise, your program won't recognize what 'std' means.
 
 /* 	
 * These are C++ comments. There are two ways to write comments in C++.
@@ -26,6 +26,7 @@ Let's see "9 + 5"
 // Calculate the sum of integer_one and integer_two and assign the result to integer_sum
 // outputs the results to standard out
 
+#include <iostream>
 int main() {
     int integer_one;
     integer_one = 5;
@@ -33,11 +34,18 @@ int main() {
     integer_two = 9;
     int integer_sum;
     integer_sum = integer_one + integer_two;
+    std::cout << integer_sum << std::endl;
     
-    std::cout << integer_sum;
+    float first_fl = 12.07;
+    float second_fl = 65.102;
+    float float_sum;
+    float_sum = first_fl + second_fl;
+    std::cout << float_sum << std::endl;
+
     return 0;
 }
 ```
+
 
 
 
