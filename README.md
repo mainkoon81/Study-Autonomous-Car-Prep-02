@@ -84,8 +84,15 @@ for (int i = 0; i < elapsed_time; i++) {
 ```
 The for loop then checks if `i < elapsed_time`. If **true**, then the code block is run and then `i` **increases by one**. The code `i++` is equivalent to saying **i=i+1**. When `i=14` that will be the last time that the code block runs. The code checks that 14 is less than 15, runs the code block and increases `i` to 15. Then the code checks if 15 is less than 15. Since that is **false**, the for loop does not run again.
 
+**switch statement**
+A switch statement is very similar to an if clause. In fact, you can write a program that does the exact same thing with either a switch statement or a series of if-else clauses. Then why bother using a switch statement? switch statements can oftentimes be faster to execute. Many programming languages have a switch statement including Java. 
+<img src="https://user-images.githubusercontent.com/31917400/43350339-482b14a8-91fe-11e8-85cd-782dd8c775c7.jpg" />
 
-
+The output of the code would be
+```
+Not Moving - Neutral
+Your car is currently in gear: N
+```
 
 
 
