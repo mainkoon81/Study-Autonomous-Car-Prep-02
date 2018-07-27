@@ -45,6 +45,9 @@ int main() {
     return 0;
 }
 ```
+A C++ functions consists of a function **declaration** and a function **definition**. Because C++ is statically typed, you need to specify the data types for the function input variables and the data type of whatever the function returns. 
+<img src="https://user-images.githubusercontent.com/31917400/43340999-14442940-91d6-11e8-9f01-df132adc293c.jpg" />
+
 This function takes in a velocity and time. These are multiplied together to calculate a distance. 
 <img src="https://user-images.githubusercontent.com/31917400/43330645-bc088dd0-91bb-11e8-9a5a-bc71d111f1c5.jpg" />
 
