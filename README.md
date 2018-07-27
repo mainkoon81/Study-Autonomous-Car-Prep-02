@@ -45,8 +45,8 @@ int main() {
     return 0;
 }
 ```
-Function ??
-<img src="https://user-images.githubusercontent.com/31917400/43329834-732515ae-91b9-11e8-853c-bd228c87af86.jpg" />
+This function takes in a velocity and time. These are multiplied together to calculate a distance. 
+<img src="https://user-images.githubusercontent.com/31917400/43330645-bc088dd0-91bb-11e8-9a5a-bc71d111f1c5.jpg" />
 
 
 
