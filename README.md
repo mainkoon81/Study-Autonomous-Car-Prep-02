@@ -147,12 +147,17 @@ int main() {
 
 **filling up a vactor**
 
-To initialize vector values, C++ vector is using a method called **push_back**, which appends values to the end of a vector.
+To initialize vector values, 
 <img src="https://user-images.githubusercontent.com/31917400/43357501-a20b685c-927a-11e8-9c51-757c3892962b.jpg" />
 
 But there are various other ways for assigning initial values to a vector. For example,
- - When declaring a vector, you can also assign initial values simultaneously: `std::vector<int> myvector (10, 6);` It will declare a vector with ten elements, and each element will have the value 6.
+ - When declaring a vector, you can also assign initial values simultaneously: `std::vector<int> myvector(10, 6);` It will declare a vector with ten elements, and each element will have the value 6.
  - If you are using one of the more recent versions of C++, `std::vector<float> myvector = {5.0, 3.0, 2.7, 8.2, 7.9}`  
+
+**vector methods**(Useful functions for the object oriented programming)
+ - `vector<int> variable; variable.assign(10,16);`: It'll populate the vector with ten integers all having the value of 16. It seems not differ from `vector<int> variable(10,16);` but the difference is that the `.assign()`method lets you override your current vector with new values.
+ - `vector<int> variable; variable.push_back(25);`: I'll adds(appends) an element'25' to the end of the vector. 
+
 
 
 
