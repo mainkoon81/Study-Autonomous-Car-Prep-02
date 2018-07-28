@@ -188,30 +188,30 @@ int main() {
     }
     return 0;
 }
-
-
+```
+ - // Declare and define a vector {5.0, 5.0, 5.0}, // Print it out
+ - // Use **push back** to add the values 3.0, 2.5, 1.4 to the back of the vector, // Print out the vector
+ - // Use the **assign** method so that the current vector has values {5.0, 5.0, 5.0}, // Print out the vector
+```
 int main() {
-    // Declare and define a vector {5.0, 5.0, 5.0} 
+
     vector<float> vectorvar(3, 5.0);
-    // Print it out
     for (int i = 0; i < vectorvar.size(); i++) {
         cout << vectorvar[i] << " ";
     }
     cout << endl;
     
-    // Use push back to add the values 3.0, 2.5, 1.4 to the back of the vector
+    
     vectorvar.push_back(3.0);
     vectorvar.push_back(2.5);
     vectorvar.push_back(1.4);
-    // Print out the vector
     for (int i = 0; i < vectorvar.size(); i++) {
         cout << vectorvar[i] << " ";
     }
     cout << "\n";
     
-    // Use the assign method so that the current vector has values {5.0, 5.0, 5.0}
+    
     vectorvar.assign(3, 5.0);
-    // Print out the vector
     for (int i = 0; i < vectorvar.size(); i++) {
         cout << vectorvar[i] << " ";
     }
@@ -220,7 +220,6 @@ int main() {
     return 0;
 }
 ```
-
 `i++` VS `++i`: In practice, both i++ and ++i will give you the same results; these are a shorthand way of writing i = i + 1. The difference between the two is subtle: 
 ```
 int i = 5;
