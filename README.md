@@ -282,6 +282,7 @@ int main() {
 
 // **function definition
 vector<float> product(vector<float> vector1, vector<float> vector2) {
+
 	vector<float> result(vector1.size());
 
 	for (int i = 0; i < vector1.size(); i++) {
@@ -291,7 +292,8 @@ vector<float> product(vector<float> vector1, vector<float> vector2) {
 }
 ```
 > **2D vector math**
-
+Much like how Python uses a list of lists to store matrices, for the C++, we use a vector of vectors. How to declare two-dimensional vectors?  
+<img src="https://user-images.githubusercontent.com/31917400/43360727-20085b64-92b4-11e8-9b62-b48fa5cc8c94.jpg" />
 
 
 
