@@ -189,6 +189,11 @@ int main() {
 }
 ```
 `i++` VS `++i`: In practice, both i++ and ++i will give you the same results; these are a shorthand way of writing i = i + 1. The difference between the two is subtle: 
+```
+int i = 5;
+int x = i++;   // x = 5, i = 6 (called postfix)
+int x = ++i;   // x = 6, i = 6 (called prefix)
+```
  - In the postfix case, `i++`, `int x = i` is evaluated first and then `i = i + 1` occurs.
  - In the prefix case, `++i`, `i = i + 1` occurs first and then `int x = i` executes
 > When overloading the postfix operator, C++ needs to keep track of two values. In the example, the values would be 5 and 6. For the prefix operator, C++ only needs to keep track of one value: 6. Hence, when overloading the ++ operator, it's generally more efficient to use prefix than the postfix.
