@@ -148,7 +148,7 @@ int main() {
 **filling up a vactor**
 
 To initialize vector values, C++ vector is using a method called **push_back**, which appends values to the end of a vector.
-<img src="https://user-images.githubusercontent.com/31917400/43357200-c0fa70f0-9275-11e8-86d0-61d0e5e46084.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/43357501-a20b685c-927a-11e8-9c51-757c3892962b.jpg" />
 
 But there are various other ways for assigning initial values to a vector. For example,
  - When declaring a vector, you can also assign initial values simultaneously: `std::vector<int> myvector (10, 6);` It will declare a vector with ten elements, and each element will have the value 6.
