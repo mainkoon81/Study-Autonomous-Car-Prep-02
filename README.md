@@ -111,7 +111,8 @@ In general, **<>** directs the program to look for system headers in a specific 
 When you were writing Python programs to store and manipulate matrices, you used Python lists. C++ vectors are just like Python lists.
 But hold on! C++ also has something called a list. But this is where things get confusing. However, C++ lists do not work the same way as Python lists. C++ lists and C++ vectors are both in a family of structures called **sequence containers**. These containers allow you to store values in series and then access those values. C++ has a handful of sequence containers including **lists**, **vectors**, and **arrays**. 
 
-The vector type definition has a funny looking syntax because you also need to **declare** what kind of values will go inside the **vector** such as int, char, float, string, etc....for example of declaring,
+> **empty vectors**
+The vector type definition has a funny looking syntax because you also need to **declare** what kind of values will go inside the **vector** such as int, char, float, string, etc....for an example of declaring an empty vectors...
 ```
 #include <vector>
 
@@ -137,13 +138,18 @@ int main() {
 
 } // what the fuck vector_1 is empty ???
 ```
->Declaring the namespace makes the code easier to read and write. The downside is that you have to be careful with how you name your own variables and functions. 
+> Declaring the namespace makes the code easier to read and write. The downside is that you have to be careful with how you name your own variables and functions. 
 > - Namespaces help group related code together.
 > - Namespaces help avoid conflicts b/w variable, function, class names  
 > - Declaring a namespace in our program's header, allows to avoid writing out the namespace name multiple times in our code. 
 
+> **filling up a vactor**
+To initialize vector values, C++ vector is using a method called **push_back**, which appends values to the end of a vector.
+<img src="https://user-images.githubusercontent.com/31917400/43357200-c0fa70f0-9275-11e8-86d0-61d0e5e46084.jpg" />
 
-
+But there are various other ways for assigning initial values to a vector. For example,
+ - When declaring a vector, you can also assign initial values simultaneously: `std::vector<int> myvector (10, 6);` It will declare a vector with ten elements, and each element will have the value 6.
+ - If you are using one of the more recent versions of C++, `std::vector<float> myvector = {5.0, 3.0, 2.7, 8.2, 7.9}`  
 
 
 
