@@ -295,7 +295,13 @@ vector<float> product(vector<float> vector1, vector<float> vector2) {
  - Much like how Python uses a list of lists to store matrices, for the C++, we use a vector of vectors. How to declare two-dimensional vectors?  
 <img src="https://user-images.githubusercontent.com/31917400/43361075-d5405262-92bd-11e8-80cb-2d47d61d5340.jpg" />
 
-
+> Here is another way you could have set up the vector from the previous example:
+ - The syntax is a little bit more complicated. But if you start from the inside of the parenthesis and work your way out, you see that you have already seen all of the functionality. 
+ - `vector<int> (3, 2)` would set up an integer vector like {2, 2, 2}. So even though you don't see the inner vector, the code is essentially doing something like this:`vector < vector<int> > twodvector (5, {2, 2, 2});`.
+ - only Python represents vectors or matrices with square brackets `[]`. Newer versions of C++ can use squiggly brackets to represent vectors `{}`.
+```
+vector < vector<int> > twodvector (5, vector<int> (3, 2));
+```
 
 
 
