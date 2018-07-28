@@ -157,9 +157,9 @@ But there are various other ways for assigning initial values to a vector. For e
    - `std::vector<float> myvector = {5.0, 3.0, 2.7, 8.2, 7.9};`  
 
 **useful vector methods**(for the object oriented programming)
- - `vector<int> variable; variable.assign(10,16);`: It'll populate the vector with ten integers all having the value of 16. 
-   - It seems not differ from `vector<int> variable(10,16);` but the difference is that the `.assign()`method lets you **override** current vector with new values.
- - `vector<int> variable; variable.push_back(25);`: I'll adds(appends) an element'25' to the end of the vector. 
+ - `variable.assign(10,16);`: It'll populate the vector with ten integers all having the value of 16. 
+   - It seems not differ from `std::vector<int> variable(10,16);` in the beginning, but the difference is that the `.assign()`method lets you **override** current vector with new values.
+ - `variable.push_back(25);`: I'll adds(appends) an element'25' to the end of the vector. 
 
 **vectors & for-loop**
  - Much of the time, you will be using for loops to manipulate vectors.
@@ -167,7 +167,8 @@ But there are various other ways for assigning initial values to a vector. For e
    - do math with vectors
 
 For example, initializes a vector and then uses a for loop to **populate** the vector with values. Then another for loop **reads out** the vector values: 
- - 0, 5.231 
+ - 0 
+ - 5.231 
  - 10.462 
  - 15.693 
  - 20.924
@@ -187,7 +188,39 @@ int main() {
     }
     return 0;
 }
+
+
+int main() {
+    // Declare and define a vector {5.0, 5.0, 5.0} 
+    vector<float> vectorvar(3, 5.0);
+    // Print it out
+    for (int i = 0; i < vectorvar.size(); i++) {
+        cout << vectorvar[i] << " ";
+    }
+    cout << endl;
+    
+    // Use push back to add the values 3.0, 2.5, 1.4 to the back of the vector
+    vectorvar.push_back(3.0);
+    vectorvar.push_back(2.5);
+    vectorvar.push_back(1.4);
+    // Print out the vector
+    for (int i = 0; i < vectorvar.size(); i++) {
+        cout << vectorvar[i] << " ";
+    }
+    cout << "\n";
+    
+    // Use the assign method so that the current vector has values {5.0, 5.0, 5.0}
+    vectorvar.assign(3, 5.0);
+    // Print out the vector
+    for (int i = 0; i < vectorvar.size(); i++) {
+        cout << vectorvar[i] << " ";
+    }
+    cout << "\n";
+
+    return 0;
+}
 ```
+
 `i++` VS `++i`: In practice, both i++ and ++i will give you the same results; these are a shorthand way of writing i = i + 1. The difference between the two is subtle: 
 ```
 int i = 5;
