@@ -242,9 +242,70 @@ public:
  - add two vectors together
 <img src="https://user-images.githubusercontent.com/31917400/43360192-f5e775a0-92a8-11e8-9e49-d42f9fdc5304.jpg" />
 
-> 1D-vector math
+> **1D vector math**
  - Initialize a vector with the values [17,10,31,5,7]. Initialize another vector with the values [3,1,6,19,8]. Then, output another vector that contains the product of each element. In other words, the vector should have [17×3, 10×1, 31×6, 5×19, 7×8].
 ```
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// **function declaration
+vector<float> product(vector<float> vector1, vector<float> vector2);
+
+// program that computes the element-wise multiplication of two vectors
+int main() {
+	vector<float> v1(5);
+	vector<float> v2(5);
+	v1[0] = 17.0;
+	v1[1] = 10.0;
+	v1[2] = 31.0;
+	v1[3] = 5.0;
+	v1[4] = 7.0;
+	v2[0] = 3.0;
+	v2[1] = 1.0;
+	v2[2] = 6.0;
+	v2[3] = 19.0;
+	v2[4] = 8.0;
+	
+	// declare and initialize a result vector
+	vector<float> v3(v1.size());
+	// calculate the difference between the two vectors
+	v3 = product(v1, v2);
+	// print out the results of the vector multiplication
+	for (int i = 0; i < v3.size(); i++) {
+		cout << v3[i] << " ";
+	}
+	cout << endl;
+	
+	return 0;
+}
+
+// **function definition
+vector<float> product(vector<float> vector1, vector<float> vector2) {
+	vector<float> result(vector1.size());
+
+	for (int i = 0; i < vector1.size(); i++) {
+		result[i] = vector1[i] * vector2[i];
+	}
+	return result;
+}
+```
+> **2D vector math**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
