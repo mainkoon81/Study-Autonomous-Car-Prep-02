@@ -97,6 +97,10 @@ Your car is currently in gear: N
 > **Switch Limitations**: 
 If-else statements are much more flexible than switch statements. In fact, the **case clauses** in switch statements can only make **comparisons** between **integer** values, between **characters** because C++ is actually converting the characters to integers. On the other hand, **if statements** can make comparisons between floating point numbers as well as between integers. 
 
+> what if you want to store a string in a variable or do more advanced math like taking the square root of a number? Just like Python, C++ also uses pre-built libraries to help make programming easier: The **C++ Standard Library** has a lot of functions and classes like a definition for a string, arrays, tuples, functions **for reading** in and **outputting** files, **random number generators**, **definitions for complex number variables**, **mathematical functions** and many other functions as well. https://en.cppreference.com/w/cpp/header
+
+
+
 
 
 
