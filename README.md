@@ -108,6 +108,41 @@ What if you want to store a string in a variable or do more advanced math like t
 In general, **<>** directs the program to look for system headers in a specific folder. The double quotes **" "** tell the program to look for the header files in the same directory as the **main.cpp file**. but using quotes instead of brackets is less efficient. When using quotes, your program will first look for the iostream file in the main.cpp directory. When the program cannot find the file, the program will search where the standard library files are kept. Aside from Standard Library, there are many other useful C++ libraries that you install separately. Each library will have its own installation procedure and usually comes with instructions. https://en.cppreference.com/w/cpp/links/libs
 
 ### [Vectors]
+When you were writing Python programs to store and manipulate matrices, you used Python lists. C++ vectors are just like Python lists.
+But hold on! C++ also has something called a list. But this is where things get confusing. However, C++ lists do not work the same way as Python lists. C++ lists and C++ vectors are both in a family of structures called **sequence containers**. These containers allow you to store values in series and then access those values. C++ has a handful of sequence containers including **lists**, **vectors**, and **arrays**. 
+
+The vector type definition has a funny looking syntax because you also need to **declare** what kind of values will go inside the **vector** such as int, char, float, string, etc....for example of declaring,
+```
+#include <vector>
+
+int main () {
+    std::vector<char> vector_name1;
+    std::vector<int> vector_name2;
+    std::vector<float> vector_name3;
+    return 0;
+}
+```
+> **Namespaces**
+C++ vector syntax is a little bit hard to read because you have to type `std` over and over again: like for example, `std::cout` or `std::string` or `std::vector`. Thankfully, C++ provides a way to avoid writing `std` all the time. `std` is something called a **namespace**. Without getting too much into the details, namespaces let you organize code into logical groups. In this case, `std` is the namespace for the Standard Library. `using namespace std;`. For example,...note `cout`, `endl`.
+```
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> vector_1;
+    int intvariable = 5;
+    cout << intvariable << endl;
+    return 0;
+
+} // what the fuck vector_1 is empty ???
+```
+>Declaring the namespace makes the code easier to read and write. The downside is that you have to be careful with how you name your own variables and functions. 
+> - Namespaces help group related code together.
+> - Namespaces help avoid conflicts b/w variable, function, class names  
+> - Declaring a namespace in our program's header, allows to avoid writing out the namespace name multiple times in our code. 
+
+
 
 
 
