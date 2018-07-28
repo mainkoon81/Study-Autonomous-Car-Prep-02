@@ -111,7 +111,7 @@ In general, **<>** directs the program to look for system headers in a specific 
 When you were writing Python programs to store and manipulate matrices, you used Python lists. C++ vectors are just like Python lists.
 But hold on! C++ also has something called a list. But this is where things get confusing. However, C++ lists do not work the same way as Python lists. C++ lists and C++ vectors are both in a family of structures called **sequence containers**. These containers allow you to store values in series and then access those values. C++ has a handful of sequence containers including **lists**, **vectors**, and **arrays**. 
 
-**empty vectors**
+**1> empty vectors**
 
 The vector type definition has a funny looking syntax because you also need to **declare** what kind of values will go inside the **vector** such as int, char, float, string, etc....for an example of declaring an empty vectors...
 ```
@@ -124,7 +124,7 @@ int main () {
     return 0;
 }
 ```
-**Namespaces**
+**2> Namespaces**
 
 C++ vector syntax is a little bit hard to read because you have to type `std` over and over again: like for example, `std::cout` or `std::string` or `std::vector`. Thankfully, C++ provides a way to avoid writing `std` all the time. `std` is something called a **namespace**. Without getting too much into the details, namespaces let you organize code into logical groups. In this case, `std` is the namespace for the Standard Library. `using namespace std;`. For example,...note `cout`, `endl`.
 ```
@@ -145,7 +145,7 @@ int main() {
 > - Namespaces help avoid conflicts b/w variable, function, class names  
 > - Declaring a namespace in our program's header, allows to avoid writing out the namespace name multiple times in our code. 
 
-**filling up a vactor**
+**3> filling up a vactor**
 
 To initialize vector values, 
 <img src="https://user-images.githubusercontent.com/31917400/43357501-a20b685c-927a-11e8-9c51-757c3892962b.jpg" />
@@ -156,12 +156,12 @@ But there are various other ways for assigning initial values to a vector. For e
  - If you are using one of the more recent versions of C++, 
    - `std::vector<float> myvector = {5.0, 3.0, 2.7, 8.2, 7.9};`  
 
-**useful vector methods**(for the object oriented programming)
+**4> useful vector methods**(for the object oriented programming)
  - `variable.assign(10,16);`: It'll populate the vector with ten integers all having the value of 16. 
    - It seems not differ from `std::vector<int> variable(10,16);` in the beginning, but the difference is that the `.assign()`method lets you **override** current vector with new values.
  - `variable.push_back(25);`: I'll adds(appends) an element'25' to the end of the vector. 
 
-**vectors & for-loop**
+**5> vectors & for-loop**
  - Much of the time, you will be using for loops to manipulate vectors.
    - populate a vector with values
    - do math with vectors
@@ -237,7 +237,10 @@ public:
     A operator++(int);  //Postfix (i++)
 }
 ```
-
+**math example**
+ - multiply every element in a vector
+ - add two vectors together
+<img src="https://user-images.githubusercontent.com/31917400/43360192-f5e775a0-92a8-11e8-9e49-d42f9fdc5304.jpg" />
 
 
 
