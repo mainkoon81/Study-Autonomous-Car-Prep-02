@@ -292,8 +292,8 @@ vector<float> product(vector<float> vector1, vector<float> vector2) {
 }
 ```
 > **2D vector math**
-Much like how Python uses a list of lists to store matrices, for the C++, we use a vector of vectors. How to declare two-dimensional vectors?  
-<img src="https://user-images.githubusercontent.com/31917400/43360727-20085b64-92b4-11e8-9b62-b48fa5cc8c94.jpg" />
+ - Much like how Python uses a list of lists to store matrices, for the C++, we use a vector of vectors. How to declare two-dimensional vectors?  
+<img src="https://user-images.githubusercontent.com/31917400/43361031-c1e28146-92bc-11e8-95a6-ee22133a7da8.jpg" />
 
 
 
