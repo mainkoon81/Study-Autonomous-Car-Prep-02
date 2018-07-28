@@ -242,6 +242,10 @@ public:
  - add two vectors together
 <img src="https://user-images.githubusercontent.com/31917400/43360192-f5e775a0-92a8-11e8-9e49-d42f9fdc5304.jpg" />
 
+> 1D-vector math
+ - Initialize a vector with the values [17,10,31,5,7]. Initialize another vector with the values [3,1,6,19,8]. Then, output another vector that contains the product of each element. In other words, the vector should have [17×3, 10×1, 31×6, 5×19, 7×8].
+```
+
 
 
 
