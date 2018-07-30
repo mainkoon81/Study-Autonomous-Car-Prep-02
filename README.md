@@ -524,11 +524,11 @@ Object-oriented programming has the advantage of being **modular** and **testabl
 
 > **main.cpp** and **gaussian.cpp** How they work together?
  - The main.cpp file: 
-   - It **uses the class** to run some calculations. You'll see one important difference between C++ and Python. In C++, you need to declare your class before you can use the class. Both main.cpp and gaussian.cpp have the same class declaration at the top of their files
+   - It **uses the class** to run some calculations. You'll see one important difference between C++ and Python. In C++, you need to declare your class before you can use the class. Both main.cpp and gaussian.cpp have the same class declaration at the top of their files. In short, the **main.cpp** used the Gaussian class.
  - The gaussian.cpp file: 
-   - It contains the **class definition** including all the variables and functions that the Gaussian class needs.
+   - It contains the **class definition** including all the variables and functions that the Gaussian class needs. In short, the **gaussian.cpp** contained the code that defined the Gaussian class. 
 
-this is main.cpp. You can't see it on the backend, but this program is first being compiled via the command: `g++ main.cpp gaussian.cpp`. 
+This is `main.cpp` file. You can't see it on the backend, but this program is first being compiled via the command: `g++ main.cpp gaussian.cpp`. 
 ```
 #include <iostream>
 
@@ -577,9 +577,22 @@ mul results average 14
 add results variance 125
 add results average 40
 ```
+ - The main.cpp file had three parts:
+   - a header, which is where the #include statements were
+   - a class declaration
+   - a main function.
+
+> header
+ - The header included the library for outputting to the terminal: `#include <iostream>`. 
+> class declaration
+ - Then comes the class declaration. In fact, you can put the class declaration into a separate `blahblah.h` file just like we did with function declarations. The purpose of the class declaration is to give the main function access to the Gaussian class. Notice that a class declaration looks a lot like the variable declarations and function declarations we've already been using. Declarations tell the program what the variable types will be. The declarations also show the input and output types for functions.
+> main function
+ - And finally comes the main function. The main function instantiates objects of the Gaussian class. So the main function uses the class whereas gaussian.cpp defined the class. You could take the code in gaussian.cpp and put it at the bottom of main.cpp; however, your code files will become quite large and hard to read through.
 
 
 
+ 
+ 
 
 
 
