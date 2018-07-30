@@ -518,6 +518,7 @@ int main() {
  - The class also has a part labeled **private** and another part labeled **public**. 
  - Furthermore, the C++ class includes **extra functions** like `setMu`, `setSigma2`, `getMu`, and `getSigma2`.
 <img src="https://user-images.githubusercontent.com/31917400/43410091-abc1b4c4-941d-11e8-9d28-3dde43aff2bf.jpg" />
+ 
  - In C++, you might not want a program to have direct access to certain variables. The `set..()` functions allow a program to change the values in those variables without getting direct access to them. 
 
 
