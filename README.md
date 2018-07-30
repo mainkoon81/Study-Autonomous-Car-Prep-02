@@ -357,7 +357,8 @@ void matrixprint(vector < vector<int> > inputmatrix) {
 ```
 
 ### [Standard Library]
-> **making our terminal to ask us input** 
+> **making our terminal to ask us to input** 
+
 We know how to call a function and then **output** the results to the terminal using `cout`. But how do you **get user input** from the terminal? Or how do you input **data from a file** into your program or write out your results to a file? 
  - Much like the **Standard Library** provides a function for outputting to the terminal, it also provides a function for reading in data from the terminal: `cin` (c-out vs c-in)..so this makes our shell terminal to ask us to input sth.    
 ```
@@ -384,6 +385,7 @@ int main() {
 }
 ```
 > **outputting to our terminal display**
+
 The **Standard Library** includes functionality for reading text files line by line. You can then parse each line of the text file one line at a time. Say, for example, you have a text file with numbers and commas representing a 3 by 4 matrix:
 ```
 1, 6, 2, 10.5
@@ -470,6 +472,7 @@ int main() {
 }
 ```
 > **outputting to textfiles**
+
 We can also output data to a file. Say you have a matrix and you want to save the results to a text file. 
  - you need to create an ofstream object and then use the object to create a new file.
 ```
@@ -506,6 +509,86 @@ int main() {
     return 0;
 }
 ```
+## C++ object oriented Coding
+> **1. Class**
+ - Ex> 'Gaussian': This class stores the values for the standard deviation and mean. The class also has methods for calculating the probability density function, the sum of two gaussians, and the product of two gaussians. The class contains two class variables called `mu`, `sigma2`.
+<img src="https://user-images.githubusercontent.com/31917400/43409347-97b867c2-941b-11e8-95d5-acfb1309737b.jpg" />
+
+ - Unlike Python, in C++, all of its **variables** and all of its **functions** need to be declared first before writing the implementation. 
+ - The class also has a part labeled **private** and another part labeled **public**. 
+ - Furthermore, the C++ class includes **extra functions** like `setMu`, `setSigma2`, `getMu`, and `getSigma2`.
+<img src="https://user-images.githubusercontent.com/31917400/43410091-abc1b4c4-941d-11e8-9d28-3dde43aff2bf.jpg" />
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
