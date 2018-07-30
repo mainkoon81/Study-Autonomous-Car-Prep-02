@@ -577,7 +577,7 @@ mul results average 14
 add results variance 125
 add results average 40
 ```
- - The main.cpp file had three parts:
+ - `main.cpp` file had three parts:
    - a header, which is where the #include statements were
    - a class declaration
    - a main function.
