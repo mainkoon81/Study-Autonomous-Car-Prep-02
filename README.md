@@ -356,9 +356,156 @@ void matrixprint(vector < vector<int> > inputmatrix) {
 }
 ```
 
+### [Standard Library]
+> **making our terminal to ask us input** 
+We know how to call a function and then **output** the results to the terminal using `cout`. But how do you **get user input** from the terminal? Or how do you input **data from a file** into your program or write out your results to a file? 
+ - Much like the **Standard Library** provides a function for outputting to the terminal, it also provides a function for reading in data from the terminal: `cin` (c-out vs c-in)..so this makes our shell terminal to ask us to input sth.    
+```
+#include <iostream>
+#include <vector>
+using namespace std;
 
+int main() {
 
+    int integerone; 
+    int integertwo;
 
+    // declare array and assign values
+    cout << "Enter an integer between 1 and 100" << endl;
+    cin >> integerone;
+
+    cout << "Enter another integer between 1 and 100" << endl;
+    cin >> integertwo;
+
+    // output the difference
+    cout << "The difference between your two numbers is: ";
+    cout << integerone - integertwo << endl;
+    return 0;
+}
+```
+> **outputting to our terminal display**
+The **Standard Library** includes functionality for reading text files line by line. You can then parse each line of the text file one line at a time. Say, for example, you have a text file with numbers and commas representing a 3 by 4 matrix:
+```
+1, 6, 2, 10.5
+11, 15.2, 2, 21
+3, 9, 1, 7.5
+```
+You want to read in this file and create a 2D vector to represent the matrix. Then the code outputs the matrix to the terminal display. 
+```
+#include <iostream>
+/fstream provides functions and classes for reading in and outputting files.
+#include <fstream>
+/The sstream file in the Standard Library provides functionality for manipulating and parsing the string. 
+#include <sstream>
+#include <string>
+#include <vector>
+using namespace std;
+
+int main() {
+
+    // initialize string variables for reading in text file lines 
+    string line;
+    // first a sstream object is declared and then later the "ss" object is used to cycle through and parse each line of the text file:
+    stringstream ss;
+
+    // initialize variables to hold the matrix
+    vector < vector <float> > matrix;
+    vector<float> row;
+
+    // counter for characters in a text file line
+    float i;
+
+    // read in the file
+    // This line of code reads in the file "matrix.txt" and then creates an object called "matrixfile" that you can use for reading in the text file...
+    ifstream matrixfile ("matrix.txt");
+
+    // read in the matrix file line by line
+    // parse the file..The if statement that follows checks that the file opened correctly.
+    // and then a while loop reads the file one line at a time. Each line is placed into a variable called "line".
+
+    if (matrixfile.is_open()) {
+        while (getline (matrixfile, line)) {
+
+            // parse the text line with a stringstream
+            // clear the string stream to hold the next line
+            ss.clear();
+            ss.str("");
+            ss.str(line);
+            row.clear();
+
+            // parse each line and push to the end of the row vector
+            // the ss variable holds a line of text
+            // ss >> i puts the next character into the i variable. 
+            // the >> syntax is like cin >> some_value or cout << some_value
+            // ss >> i is false when the end of the line is reached
+	    // the code finds a float number and appends the number to the vector called row. 
+	    // The line "ss.peek()" looks at the next character to see if it is a comma or a space and ignores commas or spaces.
+
+            while(ss >> i) {
+                row.push_back(i);
+
+                if (ss.peek() == ',' || ss.peek() == ' ') {
+                    ss.ignore();
+                }
+            }
+
+            // push the row to the end of the matrix
+            matrix.push_back(row);
+        }
+	// when you are done with reading in the file, it's a good habit to close the file, otherwise our program could crash.
+        matrixfile.close();
+
+        // print out the matrix
+        for (int row = 0; row < matrix.size(); row++) {
+            for (int column = 0; column < matrix[row].size(); column++) {
+                cout << matrix[row][column] << " " ;
+            }
+            cout << endl; 
+        }
+    }
+
+    else cout << "Unable to open file";
+
+    return 0;
+}
+```
+> **outputting to textfiles**
+We can also output data to a file. Say you have a matrix and you want to save the results to a text file. 
+ - you need to create an ofstream object and then use the object to create a new file.
+```
+#include <iostream>
+#include <fstream>
+#include <vector>
+using namespace std;
+
+int main() {
+    // create the vector that will be outputted
+    vector< vector<int> > matrix(5, vector<int>(3,2));
+    vector<int> row;
+    
+    // open a file for outputting the matrix (in User's folder..declaring its location?)
+    ofstream outputfile;
+    outputfile.open("matrixoutput.txt");
+    
+    // output the matrix to the textfile
+    if(outputfile.is_open()) {
+       for(int row=0; row < matrix.size(); row++) {
+          for(int col=0; col < matrix[row].size; col++) {
+	     // Here, the if statement is checking whether or not 'the end of the row' is reached.
+	     if(col != matrix[row].size() -1) {
+	        outputfile << matrix[row][col] << ", ";
+	     } 
+	     else {
+	         outputfile << matrix[row][col];
+	     }
+	  }
+	  outputfile << endl;
+       }
+    }
+    outputfile.close();
+    return 0;
+}
+```
 
 
 
