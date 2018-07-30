@@ -510,7 +510,8 @@ int main() {
 }
 ```
 ## C++ object oriented Coding
-> **1. Class**
+Object-oriented programming has the advantage of being **modular** and **testable** by making good separation b/w one piece of code or another. In SelfDCar, a wheel class, a sensor class for seeing where the lanes are, a camera class used from other people, etc...we'd end up with a huge complicated system, but if everything is self-contained, very individual, objecty, encapsulated into its own separate thing, then as you change the wheels to different wheels, we can just swap that out!!!
+## Class
  - Ex> 'Gaussian': This class stores the values for the standard deviation and mean. The class also has methods for calculating the probability density function, the sum of two gaussians, and the product of two gaussians. The class contains two class variables called `mu`, `sigma2`.
 <img src="https://user-images.githubusercontent.com/31917400/43409347-97b867c2-941b-11e8-95d5-acfb1309737b.jpg" />
 
@@ -521,8 +522,62 @@ int main() {
  
  - In C++, you might not want a program to have direct access to certain variables. The `set..()` functions allow a program to change the values in those variables without getting direct access to them. 
 
+> **main.cpp** and **gaussian.cpp** How they work together?
+ - The main.cpp file: 
+   - It **uses the class** to run some calculations. You'll see one important difference between C++ and Python. In C++, you need to declare your class before you can use the class. Both main.cpp and gaussian.cpp have the same class declaration at the top of their files
+ - The gaussian.cpp file: 
+   - It contains the **class definition** including all the variables and functions that the Gaussian class needs.
 
- 
+this is main.cpp. You can't see it on the backend, but this program is first being compiled via the command: `g++ main.cpp gaussian.cpp`. 
+```
+#include <iostream>
+
+//class declaration
+class Gaussian {
+    private:
+        float mu, sigma2;
+	
+    public:
+        //constructor functions
+	Gaussian();
+	Gaussian(float, float);
+	
+	//change values
+	void setMu(float);
+	void setSigma2(float);
+	
+	//output values
+	float getMu();
+	float getSigma2();
+	
+	//functions to evaluate
+	float evaluate(float);
+	Gaussian mul(Gaussian);
+	Gaussian add(Gaussian);
+};
+
+int main() {
+    Gaussian mygaussian(30.0,100.0);
+    Gaussian othergaussian(10.0,25.0);
+    std::cout << "average " << mygaussian.getMu() << std::endl;
+    std::cout << "evaluation " << mygaussian.evaluate(15.0) << std::endl;
+    std::cout << "mul results variance " << mygaussian.mul(othergaussian).getSigma2() << std::endl;
+    std::cout << "mul results average " << mygaussian.mul(othergaussian).getMu() << std::endl;
+    std::cout << "add results variance " << mygaussian.add(othergaussian).getSigma2() << std::endl;
+    std::cout << "add results average " << mygaussian.add(othergaussian).getMu() << std::endl;
+    return 0; 
+}
+```
+It outputs..
+```
+average 30
+evaluation 0.0700165
+mul results variance 20
+mul results average 14
+add results variance 125
+add results average 40
+```
+
 
 
 
