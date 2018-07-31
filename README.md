@@ -11,6 +11,7 @@ Self Driving Car Preparation
 * The main() function almost always returns a zero, which provides evidence that the program ran to its end.
 */
 ```
+### function: `main()` 
 Let's compare "5 + 9" with "12.07 + 65.102". Note `std::endl` or `'\n'` let the result show up all the time. 
  - Define main function...
  - Define a variable called integer_one, integer_two and assign values...
@@ -37,6 +38,7 @@ int main() {
     return 0;
 }
 ```
+### function: 
 > C++ function consists of a function **declaration** and a function **definition**. Because C++ is statically typed, you need to specify the data types for the function input variables and the data type of whatever the function returns. 
 <img src="https://user-images.githubusercontent.com/31917400/43340999-14442940-91d6-11e8-9f01-df132adc293c.jpg" />
 
