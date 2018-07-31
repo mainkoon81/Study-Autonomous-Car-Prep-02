@@ -11,12 +11,13 @@ Self Driving Car Preparation
 * The main() function almost always returns a zero, which provides evidence that the program ran to its end.
 */
 ```
-### function: `main()` 
+### 1.function: `main()` 
 Let's compare "5 + 9" with "12.07 + 65.102". Note `std::endl` or `'\n'` let the result show up all the time. 
  - Define main function...
  - Define a variable called integer_one, integer_two and assign values...
  - Calculate the sum of integer_one and integer_two and assign the result to integer_sum...
- - Output the results to **standard out**. 
+ - Output the results to **standard out**.
+ - should end with `return 0;`
 ```
 #include <iostream>
 
@@ -38,7 +39,7 @@ int main() {
     return 0;
 }
 ```
-### function: 
+### 2.function: 
 > C++ function consists of a function **declaration** and a function **definition**. Because C++ is statically typed, you need to specify the data types for the function input variables and the data type of whatever the function returns. 
 <img src="https://user-images.githubusercontent.com/31917400/43340999-14442940-91d6-11e8-9f01-df132adc293c.jpg" />
 
@@ -56,7 +57,7 @@ int main() {
 vector< vector<float> > normalize(vector< vector<float> > grid);
 ```
 
-### [Control Statements]
+### 3.[Control Statements]
 **if statements** and the associated boolean logic.
 <img src="https://user-images.githubusercontent.com/31917400/43347064-ba2ee13c-91eb-11e8-8b29-2408e6e3a446.jpg" />
 
@@ -90,7 +91,7 @@ Your car is currently in gear: N
 
 If-else statements are much more flexible than switch statements. In fact, the **case clauses** in switch statements can only make **comparisons** between **integer** values, between **characters** because C++ is actually converting the characters to integers. On the other hand, **if statements** can make comparisons between floating point numbers as well as between integers. 
 
-> **Standard Library**:
+### 4.Standard Library_I
 
 What if you want to store a string in a variable or do more advanced math like taking the square root of a number? Just like Python, C++ also uses pre-built libraries to help make programming easier: The **C++ Standard Library** has a lot of functions and classes like a definition for a string, arrays, tuples, functions **for reading** in and **outputting** files, **random number generators**, **definitions for complex number variables**, **mathematical functions** and many other functions as well. https://en.cppreference.com/w/cpp/header
 ```
@@ -99,7 +100,7 @@ What if you want to store a string in a variable or do more advanced math like t
 ```
 In general, **<>** directs the program to look for system headers in a specific folder. The double quotes **" "** tell the program to look for the header files in the same directory as the **main.cpp file**. but using quotes instead of brackets is less efficient. When using quotes, your program will first look for the iostream file in the main.cpp directory. When the program cannot find the file, the program will search where the standard library files are kept. Aside from Standard Library, there are many other useful C++ libraries that you install separately. Each library will have its own installation procedure and usually comes with instructions. https://en.cppreference.com/w/cpp/links/libs
 
-### [Vectors]
+### 5.[Vectors]
 When you were writing Python programs to store and manipulate matrices, you used Python lists. C++ vectors are just like Python lists.
 But hold on! C++ also has something called a list. But this is where things get confusing. However, C++ lists do not work the same way as Python lists. C++ lists and C++ vectors are both in a family of structures called **sequence containers**. These containers allow you to store values in series and then access those values. C++ has a handful of sequence containers including **lists**, **vectors**, and **arrays**. 
 
@@ -229,7 +230,7 @@ public:
     A operator++(int);  //Postfix (i++)
 }
 ```
-**math example**
+**6> math example**
  - multiply every element in a vector
  - add two vectors together
 <img src="https://user-images.githubusercontent.com/31917400/43360192-f5e775a0-92a8-11e8-9e49-d42f9fdc5304.jpg" />
@@ -348,7 +349,7 @@ void matrixprint(vector < vector<int> > inputmatrix) {
 }
 ```
 
-### [Standard Library]
+### 6.Standard Library II
 > **making our terminal to ask us to input** 
 
 We know how to call a function and then **output** the results to the terminal using `cout`. But how do you **get user input** from the terminal? Or how do you input **data from a file** into your program or write out your results to a file? 
@@ -501,7 +502,7 @@ int main() {
     return 0;
 }
 ```
-## C++ object oriented Coding
+### 7. C++ object oriented Coding
 Object-oriented programming has the advantage of being **modular** and **testable** by making good separation b/w one piece of code or another. In SelfDCar, a wheel class, a sensor class for seeing where the lanes are, a camera class used from other people, etc...we'd end up with a huge complicated system, but if everything is self-contained, very individual, objecty, encapsulated into its own separate thing, then as you change the wheels to different wheels, we can just swap that out!!!
 ## Class
  - Ex> 'Gaussian': This class stores the values for the standard deviation and mean. The class also has methods for calculating the probability density function, the sum of two gaussians, and the product of two gaussians. The class contains two class variables called `mu`, `sigma2`.
