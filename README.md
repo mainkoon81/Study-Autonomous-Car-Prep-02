@@ -53,7 +53,7 @@ int main() {
 
 > The signature for the normalize function is:
 ```
-vector< vector<float> > normalize(vector< vector <float> > grid);
+vector< vector<float> > normalize(vector< vector<float> > grid);
 ```
 
 ### [Control Statements]
