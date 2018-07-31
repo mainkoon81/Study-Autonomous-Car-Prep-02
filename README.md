@@ -98,7 +98,7 @@ What if you want to store a string in a variable or do more advanced math like t
 #include <iostream>
 #include "distance.h"
 ```
-In general, **<>** directs the program to look for system headers in a specific folder. The double quotes **" "** tell the program to look for the header files in the same directory as the **main.cpp file**. but using quotes instead of brackets is less efficient. When using quotes, your program will first look for the iostream file in the main.cpp directory. When the program cannot find the file, the program will search where the standard library files are kept. Aside from Standard Library, there are many other useful C++ libraries that you install separately. Each library will have its own installation procedure and usually comes with instructions. https://en.cppreference.com/w/cpp/links/libs
+In general, **<>** directs the program to look for system headers in a **specific folder**. The double quotes **" "** tell the program to look for the header files in the **same directory as the main.cpp file**. but using quotes instead of brackets is less efficient. When using quotes, your program will first look for the iostream file in the main.cpp directory. When the program cannot find the file, the program will search where the standard library files are kept. Aside from Standard Library, there are many other useful C++ libraries that you install separately. Each library will have its own installation procedure and usually comes with instructions. https://en.cppreference.com/w/cpp/links/libs
 
 ### 5.[Vectors]
 When you were writing Python programs to store and manipulate matrices, you used Python lists. C++ vectors are just like Python lists.
