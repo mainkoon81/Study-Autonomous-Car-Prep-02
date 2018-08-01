@@ -550,10 +550,17 @@ class Gaussian {
 };
 
 int main() {
+    // Instantiate a Gaussian object called mygaussian. The object should have (mean = 30, sigma2 = 100)...
     Gaussian mygaussian(30.0, 100.0);
+    // Instantiate another Gaussian object called othergaussian. The object should have (mean = 10,  sigma2 = 25)...
     Gaussian othergaussian(10.0, 25.0);
+    // Output to the terminal the mean_value setting of 'mygaussian'...
     std::cout << "average " << mygaussian.getMu() << std::endl;
+    // Modify the mean value of mygaussian to mean = 45...
+    mygaussian.setMu(45.0);
+    // Output the pdf-value for mygaussian when x = 15...
     std::cout << "evaluation " << mygaussian.evaluate(15.0) << std::endl;
+    
     std::cout << "mul results variance " << mygaussian.mul(othergaussian).getSigma2() << std::endl;
     std::cout << "mul results average " << mygaussian.mul(othergaussian).getMu() << std::endl;
     std::cout << "add results variance " << mygaussian.add(othergaussian).getSigma2() << std::endl;
