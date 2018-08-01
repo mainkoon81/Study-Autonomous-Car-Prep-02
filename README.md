@@ -521,7 +521,8 @@ Object-oriented programming has the advantage of being **modular** and **testabl
  - The gaussian.cpp file: 
    - It contains the **class definition** including all the variables and functions that the Gaussian class needs. In short, the **gaussian.cpp** contained the code that defined the Gaussian class. 
 
-This is `main.cpp` file. You can't see it on the backend, but this program is first being compiled via the command: `g++ main.cpp gaussian.cpp`. 
+This is `main.cpp` file. You can't see it on the backend, but this program is first being compiled via the command:
+ - `g++ main.cpp gaussian.cpp`
 ```
 #include <iostream>
 
@@ -571,7 +572,7 @@ add results variance 125
 add results average 40
 ```
  - `main.cpp` file had three parts:
-   - a header, which is where the #include statements were
+   - a header, which is where the `#include<>` statements were
    - a class declaration
    - a main function.
 
