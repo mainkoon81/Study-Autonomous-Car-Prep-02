@@ -512,7 +512,7 @@ Object-oriented programming has the advantage of being **modular** and **testabl
  - The class also has a part labeled **private** and another part labeled **public**. 
  - Furthermore, the C++ class includes **extra functions** like `setMu`, `setSigma2`, `getMu`, and `getSigma2`.
    - In C++, you might not want a program to have direct access to certain variables. The `set..()` functions allow a program to change the values in those variables without getting direct access to them.  
-<img src="https://user-images.githubusercontent.com/31917400/43426624-3be76816-944e-11e8-87b1-c5a95be8901d.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/43553470-066afdde-95e7-11e8-8ef3-769cf288b70b.jpg" />
  
 > **main.cpp** and **gaussian.cpp** How they work together?
  - gaussian.cpp file: 
