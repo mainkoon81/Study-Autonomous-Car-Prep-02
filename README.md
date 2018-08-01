@@ -511,15 +511,14 @@ Object-oriented programming has the advantage of being **modular** and **testabl
  - Unlike Python, in C++, all of its **variables** and all of its **functions** need to be declared first before writing the implementation. 
  - The class also has a part labeled **private** and another part labeled **public**. 
  - Furthermore, the C++ class includes **extra functions** like `setMu`, `setSigma2`, `getMu`, and `getSigma2`.
+   - In C++, you might not want a program to have direct access to certain variables. The `set..()` functions allow a program to change the values in those variables without getting direct access to them.  
 <img src="https://user-images.githubusercontent.com/31917400/43426624-3be76816-944e-11e8-87b1-c5a95be8901d.jpg" />
  
- - In C++, you might not want a program to have direct access to certain variables. The `set..()` functions allow a program to change the values in those variables without getting direct access to them. 
-
 > **main.cpp** and **gaussian.cpp** How they work together?
- - The main.cpp file: 
-   - It **uses the class** to run some calculations. You'll see one important difference between C++ and Python. In C++, you need to declare your class before you can use the class. Both main.cpp and gaussian.cpp have the same class declaration at the top of their files. In short, the **main.cpp** used the Gaussian class.
- - The gaussian.cpp file: 
-   - It contains the **class definition** including all the variables and functions that the Gaussian class needs. In short, the **gaussian.cpp** contained the code that defined the Gaussian class. 
+ - gaussian.cpp file: 
+   - It contains the **class definition** including all the variables and functions that the Gaussian class needs. In short, the **gaussian.cpp** contained the code that defined the Gaussian class.  
+ - main.cpp file: 
+   - It **uses the class** to run some calculations. Unlike Python, in C++, you need to declare your class before you use the class. Note that both **main.cpp** and **gaussian.cpp** have the same class declaration at the top of their files (see **main.cpp** used the Gaussian class).
 
 This is `main.cpp` file. You can't see it on the backend, but this program is first being compiled via the command:
  - `g++ main.cpp gaussian.cpp`
