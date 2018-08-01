@@ -550,8 +550,8 @@ class Gaussian {
 };
 
 int main() {
-    Gaussian mygaussian(30.0,100.0);
-    Gaussian othergaussian(10.0,25.0);
+    Gaussian mygaussian(30.0, 100.0);
+    Gaussian othergaussian(10.0, 25.0);
     std::cout << "average " << mygaussian.getMu() << std::endl;
     std::cout << "evaluation " << mygaussian.evaluate(15.0) << std::endl;
     std::cout << "mul results variance " << mygaussian.mul(othergaussian).getSigma2() << std::endl;
