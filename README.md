@@ -576,10 +576,10 @@ It outputs..
 ```
 average 30
 evaluation 0.0700165
-mul results variance 20
-mul results average 14
-add results variance 125
-add results average 40
+multiplication_results variance 20
+multiplication_results average 14
+add_results variance 125
+add_results average 40
 ```
  - `main.cpp` file had three parts:
    - a header, which is where the `#include<>` statements were
