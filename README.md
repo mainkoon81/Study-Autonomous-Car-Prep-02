@@ -516,52 +516,51 @@ Object-oriented programming has the advantage of being **modular** and **testabl
    
 > **main.cpp** and **gaussian.cpp** How they work together?
  - gaussian.cpp file: 
-   - It contains the **class definition** including all the variables and functions that the Gaussian class needs. In short, the **gaussian.cpp** contained the code that defined the Gaussian class.  
+   - It **declares** the Gaussian class, and contains the class **definition** including all the variables and functions that the Gaussian class needs. In short, the **gaussian.cpp** contained the code that defined the Gaussian class.  
  - main.cpp file: 
-   - It **uses the class** to run some calculations. Unlike Python, in C++, you need to declare your class before you use the class. Note that both **main.cpp** and **gaussian.cpp** have the same class declaration at the top of their files (see **main.cpp** used the Gaussian class).
+   - It should **use the Gaussian class declaration** to run some calculations. Unlike Python, in C++, you need to declare your class before you use the class. Note that both **main.cpp** and **gaussian.cpp** have the **same class declaration** at the top of their files.
 <img src="https://user-images.githubusercontent.com/31917400/43553813-cade29f6-95e8-11e8-8c4e-2a95d897f80b.jpg" />
 
 - `gaussian.cpp` file had four parts:
-   - header, which is where the `#include<>` statements were
-   - **class declaration**
-   - construct function for object creation
-   - method definition
+   - Header, which is where the `#include<>` statements were
+   - **Class Declaration**
+   - Constructor Function for object_creation
+   - Method Definition
 > Header
  - The header included the library for outputting to the terminal: `#include <math.h>`. 
 > Class Declaration
- - The purpose of the class declaration is to give the constructor, method functions access to the **Gaussian class**. Declarations tell the program what the variable types will be. In the class declaration, you let the compiler know what all of the class variables and methods look like in terms of data types, inputs and outputs.
- - In essence, a private function or variable is only reachable within the class code whereas a public function or definition is accessible to objects as well.
-> Constructor Function
- - Constructor functions determine how a new **object** will be initiated. Python had an equivalent syntax with the `def __init__(self,...)`. When you declare a new object, should the object have default values? Or will you provide values every time you instantiate an object?
- - The first constructor function is for when you instantiate an object without specifying the average and variance.: DEFAULT
+ - The purpose of the class declaration is to give the [constructor] and [method] access to the **Gaussian class**. 
+   - Declarations tell the program **what the variable types will be**(private? public? integer? float? void? etc). 
+   - In the class declaration, you let the compiler know what all of the class variables and methods look like in terms of **datatypes, inputs and outputs**.
+ - A **private** function or variable is only reachable within the [class code] whereas a **public** function or definition is accessible to [objects] as well(FYI, the object initiation will come after the class declaration).
+> Constructor Function for object_creation
+ - Constructor functions determine how the **object will be initiated**. Python had an equivalent syntax with the `def __init__(self,...)`. When you declare a new object, should the object have default values? Or will you provide values every time you instantiate an object?
+ - The first constructor function is for when you instantiate an object without specifying the average and variance - DEFAULT
 ```
 Gaussian::Gaussian() {
     mu = 0;
     sigma2 = 1;    
 }
 ``` 
- - The other constructor function specifies what to do when you do specify the values of average and variance:
+ - The next constructor function specifies what to do when users do specify the values of average and variance:
 ```
 Gaussian::Gaussian(float average, float sigma) {
     mu = average;
     sigma2 = sigma;
 }
 ```
-> Method Function
- - And finally, the class methods define all of the functions that your class needs to have. The rest of the code contains the definitions for all of the functions, also called methods, that your class has. The get and set functions are specifically for getting variable values or changing the value of private variables.
+> Method Definition
+ - And finally, the class methods define all of the functions(also called methods) that your class needs to have. The `get...` and `set...` functions(already declared in the class_declaration) are specifically for getting variable values to output or changing the value of private variables.
 ```
 void Gaussian::setMu (float average) {
     mu = average;
 }
-
 void Gaussian::setSigma2 (float sigma) {
     sigma2 = sigma;
 }
-
 float Gaussian::getMu () {
     return mu;
 }
-
 float Gaussian::getSigma2() {
     return sigma2;
 }
