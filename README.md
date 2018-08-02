@@ -519,9 +519,10 @@ Object-oriented programming has the advantage of being **modular** and **testabl
    - It **declares** the Gaussian class, and contains the class **definition** including all the variables and functions that the Gaussian class needs. In short, the **gaussian.cpp** contained the code that defined the Gaussian class.  
  - main.cpp file: 
    - It should **use the Gaussian class declaration** to run some calculations. Unlike Python, in C++, you need to declare your class before you use the class. Note that both **main.cpp** and **gaussian.cpp** have the **same class declaration** at the top of their files.
-<img src="https://user-images.githubusercontent.com/31917400/43602798-ea6c24da-9688-11e8-8c24-e92df0c59e14.jpg" />
 
 # gaussian.cpp
+<img src="https://user-images.githubusercontent.com/31917400/43602798-ea6c24da-9688-11e8-8c24-e92df0c59e14.jpg" />
+
 - `gaussian.cpp` file had four parts:
    - Header, which is where the `#include<>` statements were
    - **Class Declaration**
@@ -591,6 +592,11 @@ Gaussian Gaussian::add(Gaussian other) {
  
 > - Header Files
    - While header files are not needed to run code, they are very helpful for organizing and reusing code. 
+
+
+
+
+
 > - Inclusion Guards
    - C++ compilers do not like it when your code declares the same variables, functions or classes more than once. As your code gets longer and more complex, you'll oftentimes include more than one header file at the top of your code. These header files could contain **the same class or function declarations**, and then your code won't compile. For these reason, we need 'Inclusion Guards'.
 
