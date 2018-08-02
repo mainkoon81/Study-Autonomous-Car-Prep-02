@@ -580,20 +580,21 @@ Gaussian Gaussian::add(Gaussian other) {
    - **Class_private variables and functions** are only available within your class code. **Class_Public functions and variables** are accessible not only within your class code but also by an object of the class. This means...
    - If a variable or function is **private**, then only the class code itself has access to these variables and functions. if a variable or function is marked **public** then they can be accessed outside the class. 
      - for example, when you instantiate an object, your program will be able to use the `set..()` and `get..()` functions as well as the `evaluate()`, `multiply()` and `add()` functions; however, your program will not be able to access the `mu` and `sigma2` variables directly.
+<img src="https://user-images.githubusercontent.com/31917400/43597049-d9135704-9678-11e8-9314-ba71f910e225.jpg" />
+
+ - However, By default, C++ makes all class variables and functions private. That means you can actually declare private variables and functions at the top of your class declaration **w/o labeling them private**:
+<img src="https://user-images.githubusercontent.com/31917400/43597379-c8d5eb9e-9679-11e8-9649-96367085d474.jpg" />
+ 
+ - C++ thus encourages you to make everything private unless you have a good reason not to do so. For example, by making the mu and sigma2 variables private, you have separated how mu and sigma2 are implemented versus how mu and sigma2 are accessed.
+ - What happens if the way your class calculates mu and sigma2 changes? If these variables had been public, then any code that uses your class might break. When mu and sigma2 were public, a program could directly change the value of mu and sigma with code like: `mygaussian.mu = 25;`. But when mu and sigma2 were private, a program had to use code like this: `mygaussian.setMu(25)`. If you needed to change something about the implementation of the mu variable, you would be much less likely to break existing code in the private case. A program using the Gaussian class does not need to know how mu was implemented as long as the program can get the mu value and change the value in mu. 
 > - Header Files
    - While header files are not needed to run code, they are very helpful for organizing and reusing code. 
 > - Inclusion Guards
    - C++ compilers do not like it when your code declares the same variables, functions or classes more than once. As your code gets longer and more complex, you'll oftentimes include more than one header file at the top of your code. These header files could contain **the same class or function declarations**, and then your code won't compile. For these reason, we need 'Inclusion Guards'.
 
-> Private vs Public
-<img src="https://user-images.githubusercontent.com/31917400/43597049-d9135704-9678-11e8-9314-ba71f910e225.jpg" />
 
- - However, By default, C++ makes all class variables and functions private. That means you can actually declare private variables and functions at the top of your class declaration without even labeling them **private**:
-<img src="https://user-images.githubusercontent.com/31917400/43597379-c8d5eb9e-9679-11e8-9649-96367085d474.jpg" />
- 
- - C++ thus encourages you to make everything private unless you have a good reason not to do so. For example, by making the mu and sigma2 variables private, you have separated how mu and sigma2 are implemented versus how mu and sigma2 are accessed.
 
- - What happens if the way your class calculates mu and sigma2 changes? If these variables had been public, then any code that uses your class might break. When mu and sigma2 were public, a program could directly change the value of mu and sigma with code like: `mygaussian.mu = 25;`. But when mu and sigma2 were private, a program had to use code like this: `mygaussian.setMu(25)`. If you needed to change something about the implementation of the mu variable, you would be much less likely to break existing code in the private case. A program using the Gaussian class does not need to know how mu was implemented as long as the program can get the mu value and change the value in mu. 
+
 
 
 
