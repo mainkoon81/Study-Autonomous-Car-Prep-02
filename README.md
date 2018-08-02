@@ -584,7 +584,7 @@ Gaussian Gaussian::add(Gaussian other) {
 <img src="https://user-images.githubusercontent.com/31917400/43597379-c8d5eb9e-9679-11e8-9649-96367085d474.jpg" />
  
  - What happens if the way your class calculates `mu` and `sigma2` changes(value editting)? If these variables had been **public**, then any code that uses your class **might break**. This means... 
-<img src="https://user-images.githubusercontent.com/31917400/43597049-d9135704-9678-11e8-9314-ba71f910e225.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/43605573-b029bc30-9690-11e8-8e0f-5ca0e1e45d9e.jpg" />
 
  - If `mu` and `sigma2` were **public**, a program could directly change the value of `mu` and `sigma2` with code like: `mygaussian.mu = 25;`...then we can keep using this value with code like: `mygaussian.mu`...which seems dangerous. 
  - If `mu` and `sigma2` were **private**, a program had to use code like this: `mygaussian.setMu(25)` then we can keep using this value with code like:`mygaussian.getMu()`...which seems safer. 
