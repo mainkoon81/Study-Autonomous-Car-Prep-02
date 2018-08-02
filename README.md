@@ -610,18 +610,6 @@ The solution is to use `#ifndef` statements, which allow you to implement a tech
  - Using all caps with the _H is a naming convention. It is also customary to put a comment after the #endif statement with the filename. You would want to wrap all of your header files with #ifndef statements. That way other programs do not have to keep track of what files have already been included when they want to use your code. 
  - In this case, Do not use `namespace std` because this helps avoid naming conflicts later as functions and classes are reused in different parts of a code base.
 
-
-
-
-
-
-
-
-
-
-
-
-
 ------------------------------------------------------------------------------------------------------------------
 # main.cpp
 This is `main.cpp` file. You can't see it on the backend, but this program is first being compiled via the command:
@@ -689,6 +677,8 @@ int main() {
 > main function
  - And finally comes the main function. The main function instantiates objects of the Gaussian class. So the main function uses the class whereas gaussian.cpp defined the class. You could take the code in gaussian.cpp and put it at the bottom of main.cpp; however, your code files will become quite large and hard to read through.
 
+---------------------------------------------------------------------------------------------------------------------------------
+## Example
 
 
  
