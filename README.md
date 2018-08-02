@@ -508,18 +508,97 @@ Object-oriented programming has the advantage of being **modular** and **testabl
  - Ex> 'Gaussian': This class stores the values for the standard deviation and mean. The class also has methods for calculating the probability density function, the sum of two gaussians, and the product of two gaussians. The class contains two class variables called `mu`, `sigma2`.
 <img src="https://user-images.githubusercontent.com/31917400/43409347-97b867c2-941b-11e8-95d5-acfb1309737b.jpg" />
 
+> How differ?
  - Unlike Python, in C++, all of its **variables** and all of its **functions** need to be declared first before writing the implementation. 
  - The class also has a part labeled **private** and another part labeled **public**. 
  - Furthermore, the C++ class includes **extra functions** like `setMu`, `setSigma2`, `getMu`, and `getSigma2`.
    - In C++, you might not want a program to have direct access to certain variables. The `set..()` functions allow a program to change the values in those variables without getting direct access to them.  
-<img src="https://user-images.githubusercontent.com/31917400/43553813-cade29f6-95e8-11e8-8c4e-2a95d897f80b.jpg" />
- 
+   
 > **main.cpp** and **gaussian.cpp** How they work together?
  - gaussian.cpp file: 
    - It contains the **class definition** including all the variables and functions that the Gaussian class needs. In short, the **gaussian.cpp** contained the code that defined the Gaussian class.  
  - main.cpp file: 
    - It **uses the class** to run some calculations. Unlike Python, in C++, you need to declare your class before you use the class. Note that both **main.cpp** and **gaussian.cpp** have the same class declaration at the top of their files (see **main.cpp** used the Gaussian class).
+<img src="https://user-images.githubusercontent.com/31917400/43553813-cade29f6-95e8-11e8-8c4e-2a95d897f80b.jpg" />
 
+- `gaussian.cpp` file had four parts:
+   - header, which is where the `#include<>` statements were
+   - **class declaration**
+   - construct function for object creation
+   - method definition
+> Header
+ - The header included the library for outputting to the terminal: `#include <math.h>`. 
+> Class Declaration
+ - The purpose of the class declaration is to give the constructor, method functions access to the **Gaussian class**. Declarations tell the program what the variable types will be. In the class declaration, you let the compiler know what all of the class variables and methods look like in terms of data types, inputs and outputs.
+ - In essence, a private function or variable is only reachable within the class code whereas a public function or definition is accessible to objects as well.
+> Constructor Function
+ - Constructor functions determine how a new **object** will be initiated. Python had an equivalent syntax with the `def __init__(self,...)`. When you declare a new object, should the object have default values? Or will you provide values every time you instantiate an object?
+ - The first constructor function is for when you instantiate an object without specifying the average and variance.: DEFAULT
+```
+Gaussian::Gaussian() {
+    mu = 0;
+    sigma2 = 1;    
+}
+``` 
+ - The other constructor function specifies what to do when you do specify the values of average and variance:
+```
+Gaussian::Gaussian(float average, float sigma) {
+    mu = average;
+    sigma2 = sigma;
+}
+```
+> Method Function
+ - And finally, the class methods define all of the functions that your class needs to have. The rest of the code contains the definitions for all of the functions, also called methods, that your class has. The get and set functions are specifically for getting variable values or changing the value of private variables.
+```
+void Gaussian::setMu (float average) {
+    mu = average;
+}
+
+void Gaussian::setSigma2 (float sigma) {
+    sigma2 = sigma;
+}
+
+float Gaussian::getMu () {
+    return mu;
+}
+
+float Gaussian::getSigma2() {
+    return sigma2;
+}
+```
+ - The rest of the functions (evaluate, multiply, add) are the same functions that were in the Python version of the class.
+```
+float Gaussian::evaluate(float x) {
+    return ....}
+Gaussian Gaussian::multiply(Gaussian other) {
+    return ....}
+Gaussian Gaussian::add(Gaussian other) {
+    return ....}
+```
+> other facets of Class
+ - Private vs Public
+   - **private variables and functions** are only available within your class code. **Public functions and variables**, on the other hand, are accessible within your class and also by an object of the class. If a variable or function is private, then only the class code itself has access to these variables and functions. if a variable or function is marked public then they can be accessed outside the class; for example, when you instantiate an object, your program will be able to use the set and get functions as well as the evaluate, multiply and add functions; however, your program will not be able to access the mu and sigma2 variables directly.
+ - Header Files
+   - While header files are not needed to run code, they are very helpful for organizing and reusing code. 
+ - Inclusion Guards
+   - C++ compilers do not like it when your code declares the same variables, functions or classes more than once. As your code gets longer and more complex, you'll oftentimes include more than one header file at the top of your code. These header files could contain the same class or function declarations, and then your code won't compile. For these reason, we need 'Inclusion Guards'.
+
+> Private vs Public
+<img src="https://user-images.githubusercontent.com/31917400/43597049-d9135704-9678-11e8-9314-ba71f910e225.jpg" />
+
+ - However, By default, C++ makes all class variables and functions private. That means you can actually declare private variables and functions at the top of your class declaration without even labeling them **private**:
+<img src="https://user-images.githubusercontent.com/31917400/43597379-c8d5eb9e-9679-11e8-9649-96367085d474.jpg" />
+ 
+ - C++ thus encourages you to make everything private unless you have a good reason not to do so. For example, by making the mu and sigma2 variables private, you have separated how mu and sigma2 are implemented versus how mu and sigma2 are accessed.
+
+ - What happens if the way your class calculates mu and sigma2 changes? If these variables had been public, then any code that uses your class might break. When mu and sigma2 were public, a program could directly change the value of mu and sigma with code like: `mygaussian.mu = 25;`. But when mu and sigma2 were private, a program had to use code like this: `mygaussian.setMu(25)`. If you needed to change something about the implementation of the mu variable, you would be much less likely to break existing code in the private case. A program using the Gaussian class does not need to know how mu was implemented as long as the program can get the mu value and change the value in mu. 
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------
 This is `main.cpp` file. You can't see it on the backend, but this program is first being compiled via the command:
  - `g++ main.cpp gaussian.cpp`
 ```
@@ -582,14 +661,14 @@ add_results variance 125
 add_results average 40
 ```
  - `main.cpp` file had three parts:
-   - a header, which is where the `#include<>` statements were
-   - a class declaration
-   - a main function.
+   - header, which is where the `#include<>` statements were
+   - **class declaration**
+   - main function (action) plan
 
-> header
+> Header
  - The header included the library for outputting to the terminal: `#include <iostream>`. 
-> class declaration
- - Then comes the class declaration. In fact, you can put the class declaration into a separate `blahblah.h` file just like we did with function declarations. The purpose of the class declaration is to give the main function access to the Gaussian class. Notice that a class declaration looks a lot like the variable declarations and function declarations we've already been using. Declarations tell the program what the variable types will be. The declarations also show the input and output types for functions.
+> Class Declaration
+ - Then comes the class declaration(In fact, you can put the class declaration into a separate `blahblah.h` file just like we did with function declarations). The purpose of the class declaration is to give the main function access to the **Gaussian class**. Notice that a class declaration looks a lot like the variable and function declarations we've already been using. Declarations tell the program what the variable types will be. The declarations also show **the input and output types** for functions.
 > main function
  - And finally comes the main function. The main function instantiates objects of the Gaussian class. So the main function uses the class whereas gaussian.cpp defined the class. You could take the code in gaussian.cpp and put it at the bottom of main.cpp; however, your code files will become quite large and hard to read through.
 
