@@ -591,14 +591,20 @@ Gaussian Gaussian::add(Gaussian other) {
  - If `mu` and `sigma2` were **private**, a program had to use code like this: `mygaussian.setMu(25)` then we can keep using this value with code like:`mygaussian.getMu()`...which seems safer. 
  
 > - Header Files
-   - While header files are not needed to run code, they are very helpful for organizing and reusing code. 
-
-
-
-
+ - Header files are very helpful for organizing and reusing code. Header files allowed you to put function **declarations** in a separate file which makes it easier to re-use functions in different parts of your program. Furthermore, if the class declaration changes, you only have to change the declaration in one place. 
+ - plz put the minimum number of `#include`statements into a header file because header files essentially get copied into `.cpp` files, you might inadvertently include the same library or file multiple times. The consequence is that variables, functions or classes might be declared multiple times, and the code will not compile. How to avoid the multiple declarations????
 
 > - Inclusion Guards
-   - C++ compilers do not like it when your code declares the same variables, functions or classes more than once. As your code gets longer and more complex, you'll oftentimes include more than one header file at the top of your code. These header files could contain **the same class or function declarations**, and then your code won't compile. For these reason, we need 'Inclusion Guards'.
+ - C++ compilers do not like it when your code **declares** the same variables, functions or classes more than once. As your code gets longer and more complex, you'll oftentimes include more than one header file at the top of your code. These header files could contain **the same class or function declarations**, and then your code won't compile. For these reason, we need 'Inclusion Guards'.
+ - For example, let's say there are two different classes in two separate files: 
+   - One class represents an `engine` with a variable storing the **size** of the engine
+   - The other class represents a `car`, which has a **color** variable and a variable representing the **number of doors**
+
+But there's a catch. The `car` class also uses the engine class in order to store the car's engine properties. That is why the `car.h` header file includes the engine header file with the line:`#include "engine.h"`. 
+<img src="https://user-images.githubusercontent.com/31917400/43607902-99ff16ba-9697-11e8-92b3-4546f716392f.jpg" />
+
+
+
 
 
 
