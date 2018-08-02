@@ -586,8 +586,8 @@ Gaussian Gaussian::add(Gaussian other) {
  - What happens if the way your class calculates `mu` and `sigma2` changes(value editting)? If these variables had been **public**, then any code that uses your class **might break**. This means... 
 <img src="https://user-images.githubusercontent.com/31917400/43597049-d9135704-9678-11e8-9314-ba71f910e225.jpg" />
 
- - If `mu` and `sigma2` were **public**, a program could directly change the value of `mu` and `sigma2` with code like: `mygaussian.mu = 25;`...which seems dangerous. 
- - If `mu` and `sigma2` were **private**, a program had to use code like this: `mygaussian.setMu(25)`...which seems safer. 
+ - If `mu` and `sigma2` were **public**, a program could directly change the value of `mu` and `sigma2` with code like: `mygaussian.mu = 25;`...then we can keep using this value with code like: `mygaussian.mu`...which seems dangerous. 
+ - If `mu` and `sigma2` were **private**, a program had to use code like this: `mygaussian.setMu(25)` then we can keep using this value with code like:`mygaussian.getMu()`...which seems safer. 
  
 > - Header Files
    - While header files are not needed to run code, they are very helpful for organizing and reusing code. 
@@ -649,22 +649,14 @@ int main() {
     
     // Output the pdf-value for mygaussian when x = 15...
     std::cout << "evaluation " << mygaussian.evaluate(15.0) << std::endl;
-    
-    std::cout << "multiplication_results variance " << mygaussian.multiply(othergaussian).getSigma2() << std::endl;
+    // other outputs
     std::cout << "multiplication_results average " << mygaussian.multiply(othergaussian).getMu() << std::endl;
+    std::cout << "multiplication_results variance " << mygaussian.multiply(othergaussian).getSigma2() << std::endl;
+    std::cout << "add_results average " << mygaussian.add(othergaussian).getMu() << std::endl;    
     std::cout << "add_results variance " << mygaussian.add(othergaussian).getSigma2() << std::endl;
-    std::cout << "add_results average " << mygaussian.add(othergaussian).getMu() << std::endl;
+
     return 0; 
 }
-```
-It outputs..
-```
-average 30
-evaluation 0.0700165
-multiplication_results variance 20
-multiplication_results average 14
-add_results variance 125
-add_results average 40
 ```
  - `main.cpp` file had three parts:
    - header, which is where the `#include<>` statements were
