@@ -521,6 +521,7 @@ Object-oriented programming has the advantage of being **modular** and **testabl
    - It should **use the Gaussian class declaration** to run some calculations. Unlike Python, in C++, you need to declare your class before you use the class. Note that both **main.cpp** and **gaussian.cpp** have the **same class declaration** at the top of their files.
 <img src="https://user-images.githubusercontent.com/31917400/43553813-cade29f6-95e8-11e8-8c4e-2a95d897f80b.jpg" />
 
+# gaussian.cpp
 - `gaussian.cpp` file had four parts:
    - Header, which is where the `#include<>` statements were
    - **Class Declaration**
@@ -575,12 +576,14 @@ Gaussian Gaussian::add(Gaussian other) {
     return ....}
 ```
 > other facets of Class
- - Private vs Public
-   - **private variables and functions** are only available within your class code. **Public functions and variables**, on the other hand, are accessible within your class and also by an object of the class. If a variable or function is private, then only the class code itself has access to these variables and functions. if a variable or function is marked public then they can be accessed outside the class; for example, when you instantiate an object, your program will be able to use the set and get functions as well as the evaluate, multiply and add functions; however, your program will not be able to access the mu and sigma2 variables directly.
- - Header Files
+> - Private vs Public
+   - **Class_private variables and functions** are only available within your class code. **Class_Public functions and variables** are accessible not only within your class code but also by an object of the class. This means...
+   - If a variable or function is **private**, then only the class code itself has access to these variables and functions. if a variable or function is marked **public** then they can be accessed outside the class. 
+     - for example, when you instantiate an object, your program will be able to use the `set..()` and `get..()` functions as well as the `evaluate()`, `multiply()` and `add()` functions; however, your program will not be able to access the `mu` and `sigma2` variables directly.
+> - Header Files
    - While header files are not needed to run code, they are very helpful for organizing and reusing code. 
- - Inclusion Guards
-   - C++ compilers do not like it when your code declares the same variables, functions or classes more than once. As your code gets longer and more complex, you'll oftentimes include more than one header file at the top of your code. These header files could contain the same class or function declarations, and then your code won't compile. For these reason, we need 'Inclusion Guards'.
+> - Inclusion Guards
+   - C++ compilers do not like it when your code declares the same variables, functions or classes more than once. As your code gets longer and more complex, you'll oftentimes include more than one header file at the top of your code. These header files could contain **the same class or function declarations**, and then your code won't compile. For these reason, we need 'Inclusion Guards'.
 
 > Private vs Public
 <img src="https://user-images.githubusercontent.com/31917400/43597049-d9135704-9678-11e8-9314-ba71f910e225.jpg" />
@@ -598,6 +601,7 @@ Gaussian Gaussian::add(Gaussian other) {
 
 
 ------------------------------------------------------------------------------------------------------------------
+# main.cpp
 This is `main.cpp` file. You can't see it on the backend, but this program is first being compiled via the command:
  - `g++ main.cpp gaussian.cpp`
 ```
