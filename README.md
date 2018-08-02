@@ -600,8 +600,15 @@ Gaussian Gaussian::add(Gaussian other) {
    - One class represents an `engine` with a variable storing the **size** of the engine
    - The other class represents a `car`, which has a **color** variable and a variable representing the **number of doors**
 
-But there's a catch. The `car` class also uses the engine class in order to store the car's engine properties. That is why the `car.h` header file includes the engine header file with the line:`#include "engine.h"`. 
+But there's a catch. The `car` class also uses the engine class in order to store the car's engine properties. That is why the `car.h` header file includes the engine header file with the line:`#include "engine.h"`. The `"engine.h"` file ends up being included twice, so the Engine class is declared twice.
 <img src="https://user-images.githubusercontent.com/31917400/43607902-99ff16ba-9697-11e8-92b3-4546f716392f.jpg" />
+
+The solution is to use `#ifndef` statements, which allow you to implement a technique called **inclusion guard**. The `#ifndef` statement stands for **"if not defined"**. When you wrap your header files with `#ifndef` statements, the compiler will only include a header file if the file has not yet been defined.
+ - In the current `main.cpp` example, the `"engine.h"` file would be included first. Then the compiler includes `"car.h"`. But `"car.h"` will try to include `"engine.h"` again; however, the **inclusion guard** in the `"engine.h"` file will ensure that `"engine.h"` does not get included again.
+<img src="https://user-images.githubusercontent.com/31917400/43612144-50e05096-96a3-11e8-9d69-45fb9ce0e2c8.jpg" />
+
+ - Using all caps with the _H is a naming convention. It is also customary to put a comment after the #endif statement with the filename. You would want to wrap all of your header files with #ifndef statements. That way other programs do not have to keep track of what files have already been included when they want to use your code. 
+ - In this case, Do not use `namespace std` because this helps avoid naming conflicts later as functions and classes are reused in different parts of a code base.
 
 
 
