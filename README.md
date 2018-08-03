@@ -521,7 +521,7 @@ Object-oriented programming has the advantage of being **modular** and **testabl
    - It should **use the Gaussian class declaration** to run some calculations. Unlike Python, in C++, you need to declare your class before you use the class. Note that both **main.cpp** and **gaussian.cpp** have the **same class declaration** at the top of their files.
 
 # gaussian.cpp
-<img src="https://user-images.githubusercontent.com/31917400/43602798-ea6c24da-9688-11e8-8c24-e92df0c59e14.jpg" />
+<img src="https://user-images.githubusercontent.com/31917400/43639117-120c7208-9713-11e8-94b8-3e5c43611e0a.jpg" />
 
 - `gaussian.cpp` file had four parts:
    - Header, which is where the `#include<>` statements were
