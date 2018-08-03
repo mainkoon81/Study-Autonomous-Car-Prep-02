@@ -678,8 +678,10 @@ int main() {
  - And finally comes the main function. The main function instantiates objects of the Gaussian class. So the main function uses the class whereas gaussian.cpp defined the class. You could take the code in gaussian.cpp and put it at the bottom of main.cpp; however, your code files will become quite large and hard to read through.
 
 ---------------------------------------------------------------------------------------------------------------------------------
-## Example
+## Example 1.
+<img src="https://user-images.githubusercontent.com/31917400/43641285-f0e8f530-971a-11e8-9f62-d239a60cf668.jpg" />
 
+## Example 2.
 
  
  
