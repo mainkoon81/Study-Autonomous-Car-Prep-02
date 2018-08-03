@@ -613,7 +613,7 @@ The solution is to use `#ifndef` statements, which allow you to implement a tech
 ------------------------------------------------------------------------------------------------------------------
 # main.cpp
 This is `main.cpp` file. You can't see it on the backend, but this program is first being compiled via the command:
- - `g++ main.cpp gaussian.cpp`
+ - `g++ main.cpp gaussian.cpp` on Linux ???? WTF???
 ```
 #include <iostream>
 
@@ -682,8 +682,195 @@ int main() {
 <img src="https://user-images.githubusercontent.com/31917400/43641285-f0e8f530-971a-11e8-9f62-d239a60cf668.jpg" />
 
 ## Example 2.
+ - matrix.h
+```
+#ifndef MATRIX_H
+#define MATRIX_H
+#include <vector>
+#include <iostream>
+#include <stdexcept>
 
- 
+class Matrix
+{
+    private:
+        std::vector< std::vector<float> > grid;
+        std::vector<float>::size_type rows;
+        std::vector<float>::size_type cols;
+
+    public:
+        // constructor functions
+        Matrix ();
+        Matrix (std::vector< std::vector<float> >);
+
+        // set functions
+        void setGrid(std::vector< std::vector<float> >);
+
+        // get functions
+        std::vector< std::vector<float> > getGrid();
+        std::vector<float>::size_type getRows();
+        std::vector<float>::size_type getCols();
+
+        // matrix functions
+        Matrix matrix_transpose();
+        Matrix matrix_addition(Matrix);
+
+        // matrix printing
+        void matrix_print();
+};
+
+#endif /* MATRIX_H */
+```
+ - matrix.cpp
+```
+#include "matrix.h"
+
+Matrix::Matrix() {
+    std::vector <std:: vector <float> > initial_grid (10, std::vector <float>(5, 0.5));
+    grid = initial_grid;
+    rows = initial_grid.size();
+    cols = initial_grid[0].size();
+}
+
+Matrix::Matrix(std::vector <std:: vector <float> > initial_grid) {
+    grid = initial_grid;
+    rows = initial_grid.size();
+    cols = initial_grid[0].size();
+}
+
+void Matrix::setGrid(std::vector< std::vector<float> > new_grid) {
+    grid = new_grid;
+    rows = new_grid.size();
+    cols = new_grid[0].size();
+}
+
+std::vector< std::vector<float> > Matrix::getGrid() {
+    return grid;
+}
+
+std::vector<float>::size_type Matrix::getRows() {
+    return rows;
+}
+
+std::vector<float>::size_type Matrix::getCols() {
+    return cols;
+}
+
+Matrix Matrix::matrix_transpose() {
+    std::vector< std::vector<float> > new_grid;
+    std::vector<float> row;
+
+    for (int i = 0; i < cols; i++) {
+        row.clear();
+        for (int j = 0; j < rows; j++) {
+            row.push_back(grid[j][i]); 
+        }
+        new_grid.push_back(row);
+    }
+    return Matrix(new_grid);
+}
+
+Matrix Matrix::matrix_addition(Matrix other) {
+    if ((rows != other.getRows()) || (cols != other.getCols())) {
+        throw std::invalid_argument( "matrices are not the same size" );
+    }
+
+    std::vector< std::vector<float> > othergrid = other.getGrid();
+
+    std::vector< std::vector<float> > result;
+
+    std::vector<float> new_row;
+
+    for (int i = 0; i < rows; i++) {
+        new_row.clear();
+        for (int j = 0; j < cols; j++) {
+            new_row.push_back(grid[i][j] + othergrid[i][j]);
+        }
+        result.push_back(new_row);
+    }
+    return Matrix(result);
+}
+
+void Matrix::matrix_print() {
+    std::cout << std::endl;
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            std::cout << grid[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+    std::cout << std::endl;
+}
+```
+ - main.cpp
+```
+#include <iostream>
+#include <vector>
+#include "matrix.h"
+
+int main () {
+
+    // assign a 7x5 matrix to the variable initial_grid
+    // all values in the matrix are 0.4
+    std::vector <std:: vector <float> > 
+        initial_grid (7, std::vector <float>(5, 0.4));
+
+    // TODO: Use the initial grid variable to instantiate a matrix object
+    // The matrix object should be called matrixa
+    Matrix matrixa(initial_grid);
+
+    // TODO: Use the matrix_print() method to print out matrixa
+    matrixa.matrix_print();
+
+    // TODO: Print out the number of rows in matrixa. You will need
+    // to use the getRows() function and std::cout
+    std::cout << matrixa.getRows();
+
+    // TODO: Print out the number of columns in matrixa 
+    std::cout << matrixa.getCols();
+
+    // TODO: Take the transpose of matrixa and store the results in
+    // a variable called transposea
+    Matrix transposea = matrixa.matrix_transpose();
+
+    // TODO: Print out transposea
+    transposea.matrix_print();
+
+    // Now you will use another 7x5 matrix called matrixb to 
+    // give the results of the matrix_addition function
+
+    // 7x5 2-dimensional vector with values 0.2
+    std::vector <std:: vector <float> > 
+        second_grid (7, std::vector <float>(5, 0.2));
+
+    // TODO: Instantiate an object called matrixb. Use the second_grid
+    // variable as the input to initialize matrixb
+    Matrix matrixb(second_grid);
+
+    // TOOD: Add matrixa and matrixb. Store the results in a new matrix
+    // variable called matrixsum
+    Matrix matrixsum(matrixa.matrix_addition(matrixb));
+
+    // TODO: Print out the matrix contained in the matrixsum variable
+    matrixsum.matrix_print();
+
+    return 0;
+}
+```
+> compiling and running the matrix code on your local computer. 
+ - Put your main.cpp, matrix.cpp and matrix.h into the same directory.
+ - On Windows, **compiling** and **executing** your code: 
+   - `cl /W4 /EHsc main.cpp matrix.cpp`
+   - `main`
+ - On Linux, **compiling** and **executing** your code:
+   - `g++ main.cpp matrix.cpp`
+   - `./a.out`
+
+
+
+
+
  
 
 
