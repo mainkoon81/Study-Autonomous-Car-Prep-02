@@ -683,6 +683,7 @@ int main() {
 
 ## Example 2.
  - matrix.h
+   - `vector<float>::size_type` is guaranteed to cover the full range of possible values of the size of a `vector<float>`. An int is not. 
 ```
 #ifndef MATRIX_H
 #define MATRIX_H
